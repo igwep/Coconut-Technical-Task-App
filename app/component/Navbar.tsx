@@ -55,18 +55,18 @@ const logoutUser = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
             
-              <a
+              <Link
                 href="/contact"
                 className="text-neutral-300 hover:text-white text-sm font-medium transition-colors"
               >
                 Contact
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/submission"
                 className="text-neutral-300 hover:text-white text-sm font-medium transition-colors"
               >
                 Submissions
-              </a>
+              </Link>
               <Button
                onClick={() => logoutUser()}
                 
@@ -100,18 +100,18 @@ const logoutUser = () => {
       className="lg:hidden border-t border-neutral-700 py-4"
     >
       <div className="flex flex-col space-y-4">
-        <a
+        <Link
           href="/contact"
           className="text-neutral-300 hover:text-white text-sm font-medium transition-colors px-2 py-1"
         >
           Contact
-        </a>
-        <a
+        </Link>
+        <Link
           href="/submission"
           className="text-neutral-300 hover:text-white text-sm font-medium transition-colors px-2 py-1"
         >
           Submissions
-        </a>
+        </Link>
 
         <div className="flex flex-col space-y-2 pt-2">
          
