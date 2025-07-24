@@ -10,9 +10,11 @@ import { Menu, X } from 'lucide-react';
 import Button from './ui/Button';
 import { useAuthStore } from '../stores/userStores';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 
 const Navbar = () => {
+      const router = useRouter();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const user = useAuthStore((state) => state.user);
 
@@ -39,10 +41,10 @@ const Navbar = () => {
 const logoutUser = () => {
             if (user) {
                  useAuthStore.getState().clearUser()
-                window.location.href = '/'; // Redirect to Home after logout
+                 router.push("/");// Redirect to Home after logout
             }
             else{
-                window.location.href = '/login'; // Redirect to Login if not logged in
+                router.push("/login"); // Redirect to Login if not logged in
             }
   
 }
@@ -102,13 +104,13 @@ const logoutUser = () => {
       <div className="flex flex-col space-y-4">
         <Link
           href="/contact"
-          className="text-neutral-300 hover:text-white text-sm font-medium transition-colors px-2 py-1"
+          className="text-neutral-300 hover:text-white active:bg-neutral-700 rounded-md text-sm font-medium transition-colors px-2 py-1"
         >
           Contact
         </Link>
         <Link
           href="/submission"
-          className="text-neutral-300 hover:text-white text-sm font-medium transition-colors px-2 py-1"
+          className="text-neutral-300 hover:text-white active:bg-neutral-700 rounded-md text-sm font-medium transition-colors px-2 py-1"
         >
           Submissions
         </Link>
