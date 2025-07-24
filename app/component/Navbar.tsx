@@ -11,6 +11,7 @@ import Button from './ui/Button';
 import { useAuthStore } from '../stores/userStores';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 
 const Navbar = () => {
@@ -41,6 +42,7 @@ const Navbar = () => {
 const logoutUser = () => {
             if (user) {
                  useAuthStore.getState().clearUser()
+                toast.success("Logged out successfully");
                  router.push("/");// Redirect to Home after logout
             }
             else{
@@ -118,7 +120,7 @@ const logoutUser = () => {
         <div className="flex flex-col space-y-2 pt-2">
          
          <Button
-          onClick={() => logoutUser()}
+          onClick={() => {logoutUser(); setMobileMenuOpen(false)}}
           className="bg-[#2563EB] hover:bg-brand-700 active:bg-blue-800 active:scale-95 transition-all duration-150 text-white w-full rounded-md py-2"
 >
           {user ? "LogOut" : "Login"}
