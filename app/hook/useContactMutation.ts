@@ -42,12 +42,14 @@ export const useContactMutation = ({
     },
     onSuccess: (responseData) => {
       toast.success('Message sent successfully!');
-      console.log('[Mutation] Success! Response from /api/contact:', responseData);
+      console.log('[Mutation] Success!:', responseData);
       if (setSuccessMessage) {
         setSuccessMessage(true);
       }
       addSubmission(responseData.data);
-      setHasSubmitted(true);
+      if (responseData.success) {
+         setHasSubmitted(true);
+      }
       setFormData({
         name: '',
         email: '',

@@ -46,7 +46,7 @@ export default function Login() {
       await new Promise((resolve) => setTimeout(resolve, 3000));
 
       toast.success("Logged in successfully");
-      console.log("Logged in user:", user);
+      //console.log("Logged in user:", user);
       setUser(user);
         router.push("/contact");
     } catch (error: unknown) {
