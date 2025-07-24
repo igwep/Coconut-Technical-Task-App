@@ -80,7 +80,7 @@ const logoutUser = () => {
 
             {/* Mobile menu button */}
             <button
-              className="lg:hidden p-2 rounded-md text-neutral-300 hover:text-white hover:bg-neutral-800"
+              className="lg:hidden p-2 rounded-md text-neutral-300 hover:text-white hover:bg-[#334155]"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? (
@@ -99,7 +99,7 @@ const logoutUser = () => {
       animate="visible"
       exit="exit"
       variants={menuVariants}
-      className="lg:hidden border-t border-neutral-700 py-4"
+      className="lg:hidden border-t border-[#334155] py-4"
     >
       <div className="flex flex-col space-y-4">
         <Link
@@ -117,12 +117,12 @@ const logoutUser = () => {
 
         <div className="flex flex-col space-y-2 pt-2">
          
-          <Button
-            onClick={() =>logoutUser()}
-            className="bg-[#2563EB] hover:bg-brand-700 text-white w-full"
-          >
-            {user ? 'LogOut' : 'Login'}
-          </Button>
+         <Button
+          onClick={() => logoutUser()}
+          className="bg-[#2563EB] hover:bg-brand-700 active:bg-blue-800 active:scale-95 transition-all duration-150 text-white w-full rounded-md py-2"
+>
+          {user ? "LogOut" : "Login"}
+         </Button>
         </div>
       </div>
     </motion.div>
